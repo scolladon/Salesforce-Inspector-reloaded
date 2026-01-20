@@ -171,6 +171,7 @@ class Model {
     // Get default headers that can be edited
     // Note: Authorization/X-SFDC-Session headers are set automatically based on API type
     const headers = [];
+    headers.push("Sforce-Call-Options: {\"client\": \"Salesforce-Inspector-reloaded\"}");
     headers.push("Accept: application/json; charset=UTF-8");
     if (this.request.body && this.request.body.length > 0) {
       headers.push("Content-Type: application/json; charset=UTF-8");
